@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>拖拽即走 - 设置</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🚀 拖拽即走 (Drag-n-Go)</h1>
+      <p class="subtitle">通过增强的拖拽释放手势，快速处理选中的文本、图片和链接</p>
+    </header>
+
+    <main>
+      <section class="settings">
+        <h2>⚙️ 设置</h2>
+        
+        <div class="setting-group">
+          <h3>🚫 网站排除列表 (黑名单)</h3>
+          <p class="description">
+            在以下网站中，插件将完全禁用拖拽功能，以避免与网站自带的拖拽功能冲突。
+            <br>每行输入一个网址或匹配模式，支持通配符 * 。
+          </p>
+          
+          <div class="textarea-container">
+            <textarea 
+              id="blacklist" 
+              placeholder="例如：&#10;*.trello.com/*&#10;*.figma.com/*&#10;*.miro.com/*&#10;*.draw.io/*&#10;github.com&#10;*.google.com/docs/*"
+              rows="8"
+            ></textarea>
+          </div>
+          
+          <div class="examples">
+            <h4>📝 匹配模式示例：</h4>
+            <ul>
+              <li><code>*.trello.com/*</code> - 匹配所有 Trello 页面</li>
+              <li><code>github.com</code> - 匹配 GitHub 主域名</li>
+              <li><code>*.google.com/docs/*</code> - 匹配 Google Docs</li>
+              <li><code>example.com/admin/*</code> - 匹配特定路径</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <h3>🎯 搜索引擎设置</h3>
+          <p class="description">选择拖拽文本时使用的默认搜索引擎：</p>
+          <select id="searchEngine">
+            <option value="google">Google</option>
+            <option value="bing">Bing</option>
+            <option value="baidu">百度</option>
+            <option value="duckduckgo">DuckDuckGo</option>
+          </select>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button id="save" class="btn btn-primary">💾 保存设置</button>
+        <button id="reset" class="btn btn-secondary">🔄 恢复默认</button>
+      </div>
+
+      <div id="status" class="status"></div>
+    </main>
+
+    <footer>
+      <p>© 2025 拖拽即走 Chrome 插件 | 让浏览更高效</p>
+    </footer>
+  </div>
+
+  <script src="utils.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Drag-n-Go",
+  "version": "1.0.5",
+  "description": "通过增强的拖拽释放手势，快速处理选中的文本、图片和链接，提升浏览效率",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["utils.js", "content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "options_page": "options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "拖拽即走设置"
+  }
+}

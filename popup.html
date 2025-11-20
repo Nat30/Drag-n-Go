@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>拖拽即走</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+  <div class="popup-container">
+    <header>
+      <div class="logo">
+        <span class="icon">🚀</span>
+        <h1>拖拽即走</h1>
+      </div>
+      <div class="version">v1.0.5</div>
+    </header>
+
+    <main>
+      <div class="status-section">
+        <div class="status-item">
+          <span class="status-icon" id="statusIcon">✅</span>
+          <span class="status-text" id="statusText">插件已启用</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="toggleSite" class="btn btn-secondary">
+          <span id="toggleText">添加到黑名单</span>
+        </button>
+        <button id="openOptions" class="btn btn-primary">
+          ⚙️ 打开设置
+        </button>
+      </div>
+    </main>
+  </div>
+
+  <script src="utils.js"></script>
+  <script src="popup.js"></script>
+</body>
+
+</html>
